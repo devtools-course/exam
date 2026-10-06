@@ -30,7 +30,7 @@ jobs:
     needs: compile
     runs-on: ubuntu-latest
     permissions:
-      contents: read
+      id-token: write
       pages: write
 
     environment:
