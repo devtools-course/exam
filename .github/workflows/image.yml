@@ -1,0 +1,42 @@
+name: image.yml
+on:
+  push:
+  workflow_dispatch:
+
+
+jobs:
+  compile:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Typst
+        uses: typst-community/setup-typst@v4
+
+      - name: Compile PDF
+        run: |
+          mkdir -p _site
+          typst compile --root . exam.typ _site/exam.pdf
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        id: exam
+        with:
+          path: _site
+
+  publish:
+    needs: compile
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+
+    environment:
+      name: github-pages
+      url: ${{ steps.exam.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: exam
+        uses: actions/deploy-pages@v4
