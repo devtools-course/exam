@@ -1,11 +1,15 @@
 = DevTools Exam
 
+
+
 == Copyright
 
 pass:[<i class="fab fa-creative-commons"></i>]
 pass:[<i class="fab fa-creative-commons-by"></i>]
 pass:[<i class="fab fa-creative-commons-nc"></i>]
 pass:[<i class="fab fa-creative-commons-sa"></i>]
+
+We use https://github.com/JuanM04/barcala[*barcala* template] to style the doc.
 
 The project is licensed under the terms of the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.
 
