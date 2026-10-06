@@ -14,6 +14,15 @@ jobs:
 
       - name: Set up Typst
         uses: typst-community/setup-typst@v4
+      
+      - name: Install JetBrains Mono
+        run: |
+          curl -fsSL -o jbm.zip https://github.com/JetBrains/JetBrainsMono/releases/download/v2.304/JetBrainsMono-2.304.zip
+          unzip -q jbm.zip -d jbm
+          mkdir -p ~/.local/share/fonts
+          cp jbm/fonts/ttf/*.ttf ~/.local/share/fonts/
+          fc-cache -f
+          typst fonts | grep -i "JetBrains Mono"
 
       - name: Compile PDF
         run: |
