@@ -102,6 +102,12 @@ Q#counter(heading).display() #it.body
 #import "utils.typ": utils_qs
 #reg_topic("Linux. Utils", utils_qs)
 
+#import "docker.typ": docker_qs
+#reg_topic("Docker", docker_qs)
+
+#import "misc.typ": misc_qs
+#reg_topic("Miscellaneous", misc_qs)
+
 /////////////////////////////////////////////////////////////////////////
 #context { 
   let qs = questions.final()
